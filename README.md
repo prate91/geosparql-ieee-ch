@@ -4,7 +4,7 @@ This repository contains the text of the queries and web application that provid
 
 ## Query 1 (Q1) - Value chains operating in the Carpathian Mountains
 
-```showLineNumbers
+```SQL showLineNumbers
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
