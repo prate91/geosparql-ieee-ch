@@ -126,6 +126,236 @@ WHERE {
 | With a open-air grazing in a regional   natural park, it is produced and processed high-quality milk | Italy  |
 | Alto Trentino, organic wine production   for premium wines                                           | Italy  |
 
+## Query 3 (Q3) - Value chains operating in Iberian Peninsula
+
+```
+PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX narra: <https://dlnarratives.eu/ontology#>
+PREFIX osm: <https://www.openstreetmap.org/>
+PREFIX wd:  <http://www.wikidata.org/entity/>
+PREFIX osm2rdfkey: <https://osm2rdf.cs.uni-freiburg.de/rdf/key#>
+
+SELECT ?nlabel ?clabel ?wktLau 
+WHERE  
+    {   
+        ?narra narra:isAboutCountry ?country ;
+           narra:isAboutLAU ?lau ;
+    	      rdfs:label ?nlabel .
+    ?country rdfs:label ?clabel .
+    ?lau geo:hasGeometry ?glau .
+    ?glau geo:asWKT ?wktLau .
+   { SELECT ?wkt WHERE {
+        	SERVICE 
+      		  <https://qlever.cs.uni-freiburg.de/api/osm-planet> { 
+            	?osm_id osm2rdfkey:wikidata wd:Q12837 ;
+                        a osm:relation ;
+                        geo:hasGeometry ?geometry .
+                ?geometry geo:asWKT ?wkt .
+                
+        	} 
+    	} LIMIT 1
+  	}
+     FILTER(geof:sfWithin(?wktLau,?wkt)). 
+}
+```
+
+![Results of Q3](img/iberian.png "Results of Q3")
+
+| nlabel                                                                                 | clabel   |
+|----------------------------------------------------------------------------------------|----------|
+| Spanish fighting bull (Toro de Lidia)                                                  | Spain    |
+| High mountain honey from heatherlands                                                  | Portugal |
+| Transhumance livestock                                                                 | Spain    |
+| LanjarÃ³n, spring and mineral water from   Sierra Nevada                               | Spain    |
+| Botillo from El Bierzo                                                                 | Spain    |
+| Lamb meat from an autochthonous sheep   breed                                          | Portugal |
+| Tourism based on thermal water from   thermal srings at Serra da Estrela               | Portugal |
+| Iberian Ham (JamÃ³n IbÃ©rico) Protected   Designation of Origin (PDO) - Los Pedroches  | Spain    |
+| Goatling meat                                                                          | Portugal |
+| SubbÃ©tica EcolÃ³gica, production and   consumption of organic food                    | Spain    |
+| Olive oil Protected Designation of Origin   Sierra de Segura                           | Spain    |
+| Elderly care in Carcabuey                                                              | Spain    |
+| Lamb production - COVAP (Cooperativa   Ganadera del Valle de los Pedroches)            | Spain    |
+| Meat from Cervera de Pisuerga and the   Palencia Mountains                             | Spain    |
+| Bailandera beer                                                                        | Spain    |
+| Veal from Cantabria                                                                    | Spain    |
+| Euskal Txerria Pig                                                                     | Spain    |
+| Spanish Vigneronsfrom Huesca Pirineos                                                  | Spain    |
+| Products made from Burel, a specific wool   fabric                                     | Portugal |
+| La Troje seeds                                                                         | Spain    |
+| Energy production from Hydroelectric   Power Plants at Serra da Estrela                | Portugal |
+| BETIZU, Basque Country endangered breed                                                | Spain    |
+| Organic Iberian goose                                                                  | Spain    |
+| Lamb Meat from Zuheros                                                                 | Spain    |
+| Mineral Water from almost virgin natural   spring at 1400 m altitude                   | Portugal |
+| Goat cheese from Sierra Morena                                                         | Spain    |
+| Protected Geographical Indication (PGI)   beef                                         | Spain    |
+| 'Azpi Gorri' Goat Breed                                                                | Spain    |
+| Quince juice and vinegar from Carcabuey   and Priego de CÃ³rdoba                       | Spain    |
+| Breeding of purebred Spanish horses                                                    | Spain    |
+| Honey                                                                                  | Spain    |
+| Production of spirits, liquors, and   brandies, following traditional recipes          | Spain    |
+| Traditional local sweets and pastries                                                  | Spain    |
+| Suckling goat from Malaga                                                              | Spain    |
+| Mycology in the mountains of Soria                                                     | Spain    |
+| Traditional sheep's milk cheese                                                        | Portugal |
+| Organic Olive Oil from Zuheros                                                         | Spain    |
+| Production of chestnut and wine in   Ribeira Sacra, Galicia, Spain                     | Spain    |
+| Traditional sheep's milk cottage cheese                                                | Portugal |
+| Mantecados de Rute, Traditional Christmas   cakes made mainly from lard                | Spain    |
+| Borda beer                                                                             | Spain    |
+| Spirits - anis and cherry drinks                                                       | Spain    |
+| Leather handcraft                                                                      | Spain    |
+| Liqueur made from sour cherry from Serra   da Estrela                                  | Portugal |
+| Brandy made from Juniperus communis from   Serra da Estrela                            | Portugal |
+| Arbutus unedo tree fruit from mountain   hillsides and surroundings                    | Portugal |
+| Anea (Bulrush) handcraft chairs and   baskets                                          | Spain    |
+| Cherries from Castillo de LocubÃ­n                                                     | Spain    |
+| Liqueur from Sambucus nigra flower from   Serra da Estrela                             | Portugal |
+| Sustainable rural tourism                                                              | Spain    |
+| Andalusian white goats                                                                 | Spain    |
+| Such as Hiking, Mountain Biking,   Birdwatching and Fishing                            | Portugal |
+| Such as Alheira, ChouriÃ§a de Carne,   Farinheira, LinguiÃ§a, Morcela, Paio and Paiola | Portugal |
+| High quality cork                                                                      | Spain    |
+| Wines of the Contraviesa                                                               | Spain    |
+| Grazalema wool blankets, textile   craftsmanship                                       | Spain    |
+| Local bean variety from Manteigas   municipality                                       | Portugal |
+| Wine from Serra da Estrela, one of the   subregions of DÃ£o Demarcated Region          | Portugal |
+| Chestnut (seed) from chestnut groves at   mountain hillsides and surroundings          | Portugal |
+| Chestnut products                                                                      | Spain    |
+| Rye Bread made from cereals grown at the   mountain                                    | Portugal |
+| Hunting                                                                                | Spain    |
+| Wool Products from Bordaleira Serra da   Estrela autochthonous sheep breed             | Portugal |
+| Astronomy toutism (Starlight tourism)                                                  | Spain    |
+| Cheese from Picos de Europa                                                            | Spain    |
+| DO Douro Wine - Douro Superior - Vila   Nova de Foz CÃ´a                               | Portugal |
+
+## Query 4 (Q4) - Value chains operating around long European rivers
+
+```
+PREFIX osmkey: <https://www.openstreetmap.org/wiki/Key:>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX osm: <https://www.openstreetmap.org/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX narra: <https://dlnarratives.eu/ontology#>
+PREFIX osm2rdfkey: <https://osm2rdf.cs.uni-freiburg.de/rdf/key#>
+
+SELECT ?nlabel ?clabel ?wktLau 
+WHERE { 
+    ?narra narra:isAboutCountry ?country ;
+            narra:isAboutLAU ?lau ;
+            rdfs:label ?nlabel .
+    ?country rdfs:label ?clabel .
+    ?lau geo:hasGeometry ?glau .
+    ?glau geo:asWKT ?wktLau .
+{
+SELECT DISTINCT ?river_osm ?river_wd ?river_name ?length ?wkt WHERE {
+    SERVICE <https://qlever.cs.uni-freiburg.de/api/osm-planet> {
+        ?river_osm a osm:relation ;
+                osmkey:waterway ?waterway ;
+                geo:hasGeometry ?geometry ;
+                osmkey:name ?river_name ;
+                osm2rdfkey:wikidata ?river_wd .
+        ?geometry geo:asWKT ?wkt .
+    SERVICE <https://qlever.cs.uni-freiburg.de/api/wikidata> {
+        ?river_wd wdt:P31/wdt:P279* wd:Q4022 ;
+                wdt:P30 wd:Q46 ;
+                wdt:P2043 ?length .
+        FILTER (?length > 500)
+    }
+    }
+} ORDER BY DESC(?length) 
+}
+FILTER(geof:sfIntersects(?wktLau, ?wkt)). 
+}
+
+```
+
+![Results of Q4](img/rivers.png "Results of Q4")
+
+| nlabel                                                   | clabel      |
+|----------------------------------------------------------|-------------|
+| The tastes of Monostor                                   | Hungary     |
+| Traditional alpine meat (and other   animal) products    | Switzerland |
+| Saffron                                                  | Switzerland |
+| Traditional alpine vegetable products                    | Switzerland |
+| Traditional alpine herbs                                 | Switzerland |
+| Mushrooms                                                | Switzerland |
+| 'Valser Naturstein' quarzite                             | Switzerland |
+| Mountain honey                                           | Switzerland |
+| Traditional alpine dairy products                        | Switzerland |
+| 'AlpenHirt' dried meat                                   | Switzerland |
+| Grain and cereal products                                | Switzerland |
+| 'GranAlpin' cereal products                              | Switzerland |
+| Beer                                                     | Switzerland |
+| 'Bergkartoffeln' gourmet potatoes                        | Switzerland |
+| 'Allesmassiv' carpentry                                  | Switzerland |
+| 'Patrimont Switzerland' saving old breeds                | Switzerland |
+| 'Orma' Whiskey                                           | Switzerland |
+| 'Veg Alp' gourmet culinary products                      | Switzerland |
+| Alpine Fish                                              | Switzerland |
+| Touristic services                                       | Switzerland |
+| Wine                                                     | Switzerland |
+| 'ZOJA' apple tasting box                                 | Switzerland |
+| Traditional alpine fruit products                        | Switzerland |
+| 'Fruttipertutti'                                         | Switzerland |
+| Game animals                                             | Switzerland |
+| 'RÃ¶teli' - cherry liquor                                | Switzerland |
+| Wood                                                     | Switzerland |
+| 'Alpinavera' Nuts                                        | Switzerland |
+| Alps Art Academy and Art Safiental                       | Switzerland |
+| 'AlpenPionier' hemp products                             | Switzerland |
+| 'Soglio' cosmetics                                       | Switzerland |
+| DO Douro Wine - Douro Superior - Vila   Nova de Foz CÃ´a | Portugal    |
+| Osttiroler Mountain Lamb (Osttiroler   Berglamm)         | Austria     |
+| Organic products from mountain areas (Bio   vom Berg)    | Austria     |
+| MÃ¶lltal-Glockner Lamm                                   | Austria     |
+| KÃ¤rntna LÃ¥xn                                           | Austria     |
+| Traditional local sweets and pastries                    | Spain       |
+| Leather handcraft                                        | Spain       |
+| High quality cork                                        | Spain       |
+| Hunting                                                  | Spain       |
+| Astronomy toutism (Starlight tourism)                    | Spain       |
+| Barley flour and groats                                  | Norway      |
+| Traditional alpine meat (and other   animal) products    | Switzerland |
+| Saffron                                                  | Switzerland |
+| Traditional alpine vegetable products                    | Switzerland |
+| Traditional alpine herbs                                 | Switzerland |
+| Mushrooms                                                | Switzerland |
+| 'Valser Naturstein' quarzite                             | Switzerland |
+| Organic products from mountain areas (Bio   vom Berg)    | Austria     |
+| Mountain honey                                           | Switzerland |
+| Traditional alpine dairy products                        | Switzerland |
+| 'AlpenHirt' dried meat                                   | Switzerland |
+| Grain and cereal products                                | Switzerland |
+| 'GranAlpin' cereal products                              | Switzerland |
+| Beer                                                     | Switzerland |
+| 'Bergkartoffeln' gourmet potatoes                        | Switzerland |
+| 'Allesmassiv' carpentry                                  | Switzerland |
+| 'Patrimont Switzerland' saving old breeds                | Switzerland |
+| 'Orma' Whiskey                                           | Switzerland |
+| 'Veg Alp' gourmet culinary products                      | Switzerland |
+| Alpine Fish                                              | Switzerland |
+| Touristic services                                       | Switzerland |
+| Wine                                                     | Switzerland |
+| 'ZOJA' apple tasting box                                 | Switzerland |
+| Traditional alpine fruit products                        | Switzerland |
+| 'Fruttipertutti'                                         | Switzerland |
+| Game animals                                             | Switzerland |
+| 'RÃ¶teli' - cherry liquor                                | Switzerland |
+| Wood                                                     | Switzerland |
+| 'Alpinavera' Nuts                                        | Switzerland |
+| Alps Art Academy and Art Safiental                       | Switzerland |
+| 'AlpenPionier' hemp products                             | Switzerland |
+| 'Soglio' cosmetics                                       | Switzerland |
+
 ## Structure of the application
 
 In the folder web-app is possible to find the web application
