@@ -2,7 +2,7 @@
 
 This repository contains the text of the queries and web application that provides comprehensive answers to all the queries presented in the paper "TITLE". The repository is structured to ensure easy navigation and access to specific queries and their respective answers.
 
-Query 1 (Q1) - Value chains operating in the Carpathian Mountains
+## Query 1 (Q1) - Value chains operating in the Carpathian Mountains
 
 ```
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -91,6 +91,40 @@ WHERE {
 | 'GASTRO LOCAL'                                                                                                                                      | Romania        |
 | Trizs, the fruitful village                                                                                                                         | Hungary        |
 
+## Query 2 (Q2) - Value chains operating around Trento city (Italy)
+
+```
+PREFIX uom:  <http://www.opengis.net/def/uom/OGC/1.0/>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geof:  <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo:  <http://www.opengis.net/ont/geosparql#>
+PREFIX narra:  <https://dlnarratives.eu/ontology#>
+SELECT ?nlabel ?clabel ?wktLau
+WHERE { 
+       {
+    ?narra narra:isAboutCountry ?country ;
+            narra:isAboutLAU ?lau ;
+            rdfs:label ?nlabel .
+    ?country rdfs:label ?clabel .
+    ?lau geo:hasGeometry ?glau .
+    ?glau geo:asWKT ?wktLau .
+}
+    FILTER(geof:sfIntersects(
+        ?wktLau,
+        geof:buffer(
+            "POINT(11.12108 46.06787)"^^geo:wktLiteral,
+        0.5, uom:degree))). 
+}
+```
+
+![Results of Q2](img/trento.png "Results of Q2")
+
+| nlabel                                                                                               | clabel |
+|------------------------------------------------------------------------------------------------------|--------|
+| Dairy industry                                                                                       | Italy  |
+| La Cattedra- Commons farming for social   and educational purposes- Asiago Plateau                   | Italy  |
+| With a open-air grazing in a regional   natural park, it is produced and processed high-quality milk | Italy  |
+| Alto Trentino, organic wine production   for premium wines                                           | Italy  |
 
 ## Structure of the application
 
