@@ -4,7 +4,7 @@ This repository contains the text of the queries and web application that provid
 
 ## Query 1 (Q1) - Value chains operating in the Carpathian Mountains
 
-```SQL showLineNumbers
+```
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
@@ -34,6 +34,30 @@ WHERE {
    FILTER(geof:sfIntersects(?wktLau,?wkt)).
 }
 ```
+
+### Explanaition of the query
+The query internally accesses the QLever endpoint provided by the University of Freiburg, specifically utilizing the OpenStreetMap subgraph to define the Carpathian Mountains as a polygonal region.
+
+The `SELECT` statement at line 9 specifies the output variables: `?nlabel` (narrative title), `?clabel` (country name), and `?wktLau` (LAU geometry in WKT format). These variables are the focus of the query’s output. The `WHERE` clause, beginning at line 10, contains the conditions required for each result. The following graph patterns are used:
+
+- At line 12, the triple pattern `?narrative narra:isAboutLAU ?lau` links each narrative to its corresponding LAU.
+- At line 15, the triple pattern `?lau geo:hasGeometry ?glau` retrieves the geometry associated with each LAU.
+- At line 16, the triple pattern `?glau geo:asWKT ?wktLau` provides the WKT representation of the LAU geometry.
+
+
+A nested `SELECT` clause, beginning at line 18, retrieves the WKT geometries (`?wkt`) of the Carpathian Mountains region under the following `WHERE` conditions:
+
+- The `SERVICE` keyword is used to access the external QLever endpoint at \url{https://qlever.cs.uni-freiburg.de/api/osm-planet`.
+- The triple pattern at line 21, `?osm\_id osm2rdfkey:wikidata wd:Q1286`, retrieves the instance corresponding to the Wikidata entity \textit{Carpathian Mountains` (wd:Q1288).
+- The triple pattern at line 22, `?osm\_id geo:geometry ?geometry`, retrieves the IRI representing the geometry of `wd:Q1288` (Carpathian Mountains).
+- The triple pattern at line 23, `?geometry geo:asWKT ?wkt`, retrieves the WKT representation of the Carpathian Mountains geometry.
+
+
+A final `FILTER` clause at line 27 performs an intersection between the LAU and Carpathian Mountains geometries, retrieving all LAU polygons that intersect with the Carpathian Mountains region. The resulting set of LAU can be imported into a GIS visualizer and overlaid with the Carpathian reference region.
+
+
+
+### Results of the query
 
 ![Results of Q1](img/carpathian.png "Results of Q1")
 
@@ -116,7 +140,9 @@ WHERE {
         0.5, uom:degree))). 
 }
 ```
+### Explanaition of the query
 
+### Results of the query
 ![Results of Q2](img/trento.png "Results of Q2")
 
 | nlabel                                                                                               | clabel |
@@ -161,7 +187,9 @@ WHERE
      FILTER(geof:sfWithin(?wktLau,?wkt)). 
 }
 ```
+### Explanaition of the query
 
+### Results of the query
 ![Results of Q3](img/iberian.png "Results of Q3")
 
 | nlabel                                                                                 | clabel   |
@@ -277,7 +305,9 @@ FILTER(geof:sfIntersects(?wktLau, ?wkt)).
 }
 
 ```
+### Explanaition of the query
 
+### Results of the query
 ![Results of Q4](img/rivers.png "Results of Q4")
 
 | nlabel                                                   | clabel      |
