@@ -2,7 +2,7 @@
 
 This repository contains the text of the queries and web application that provides comprehensive answers to all the queries presented in the paper "TITLE". The repository is structured to ensure easy navigation and access to specific queries and their respective answers.
 
-Query 1
+Query 1 (Q1) - Value chains operating in the Carpathian Mountains
 
 ```
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -34,6 +34,8 @@ WHERE {
    FILTER(geof:sfIntersects(?wktLau,?wkt)).
 }
 ```
+
+![Results of Q1](img/carpathian.png "Results of Q1")
 
 ## Structure of the application
 
