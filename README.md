@@ -37,58 +37,59 @@ WHERE {
 
 ![Results of Q1](img/carpathian.png "Results of Q1")
 
-nlabel	clabel
-ECO-FERTILISER (WOOL PELLETS)	Romania
-'DULCEAÈšÄ‚'	Romania
-FORESTS WITH SPECIAL PROTECTION FUNCTION	Romania
-In Eastern Serbia/Mountain Rtanj, herb tea - Saturejea Montana	Serbia
-'BRÃ‚NZÄ‚ DE BURDUF'	Romania
-Timber production in Slovak mountain forests	Slovakia
-Milk production with label 'mountain milk' according to EU regulations	Slovakia
-Family farms with both production and recreational possibilities for visitors	Slovakia
-Horse breeding in mountain areas	Slovakia
-Organic farming and wine production in Vadna	Hungary
-Spring and mineral waters from mountains - sold as natural or flavored with local wild herbs	Slovakia
-Ecological garden in PallagvÃ¶lgy - a joint enterprise	Hungary
-HOREZU' CERAMICS	Romania
-THERAPEUTIC BEE PRODUCTS (PROPOLIS and POLLEN)	Romania
-'MOZZARELLA'	Romania
-E-commerce and governement incentives to support domestic game meat consumption	Slovakia
-'TELEMEA'	Romania
-Pumpkin seed products in Boldva	Hungary
-The labelled traditional cheese products from sheep or from a mixture of sheep and cow milk	Slovakia
-ValaÅ¡skÃ½ frgÃ¡l	Czech Republic
-A strong alcoholic beverages from juniper berries growing in Slovak mountains protected by PGI	Slovakia
-Beef cattle breeding in mountains	Slovakia
-Winter ski recreation in Slovak mountains	Slovakia
-Living Countryhouse - farm museum	Hungary
-Beekeeping in mountain areas for different bee products and polination	Slovakia
-Collection of forest mushrooms for own consumption	Slovakia
-Wood from Slovak forests used for building houses, cottages, restaurants and guesthouses	Slovakia
-'SALAM MONTAN ANGUS'	Romania
-FARMED and PROCESSED MOUNTAIN TROUT	Romania
-'BRÄ‚NZÄ‚ HOREZU'	Romania
-VIDRA LAKE and LOTRU-CIUNGET HYDROELECTRIC POWER STATION	Romania
-Use of good quality air for healing purposes through recreational stays in high mountains	Slovakia
-ALL SEASON MOUNTAIN TOURISM	Romania
-The tastes of Monostor	Hungary
-Small scale production of high quality oils for eating and cosmetic purposes	Slovakia
-Sheep's wool processing helps maintain traditional sheep farming in Slovakia; the sheep wool products include home textile products and clothes	Slovakia
-Organic production and packaging of medicinal herbs in mountains	Slovakia
-'PASTRAMA DE OAIE'	Romania
-Processed timber (saw mils and wood products) from domestic production	Slovakia
-HIGH NATURE VALUE (HNV) GRASSLANDS	Romania
-Cow - dairy products	Czech Republic
-MOUNTAIN HONEY	Romania
-Lamb meat production - focusing on local consumers instead of export	Slovakia
-LIVE SHEEP and LAMBS FOR SLAUGHTER	Romania
-Sustainable local food system project - KÃ³spallag	Hungary
-Pasta from MÃºcsony - a social economy project	Hungary
-CERTIFIED ECOTOURISM	Romania
-A combination of beekeeping and agrotourism	Slovakia
-FIREWOOD FOR HEATING and COOKING	Romania
-'GASTRO LOCAL'	Romania
-Trizs, the fruitful village	Hungary
+| nlabel                                                                                                                                              | clabel         |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
+| ECO-FERTILISER (WOOL PELLETS)                                                                                                                       | Romania        |
+| 'DULCEAÈšÄ‚'                                                                                                                                        | Romania        |
+| FORESTS WITH SPECIAL PROTECTION FUNCTION                                                                                                            | Romania        |
+| In Eastern Serbia/Mountain Rtanj, herb   tea - Saturejea Montana                                                                                    | Serbia         |
+| 'BRÃ‚NZÄ‚ DE BURDUF'                                                                                                                                | Romania        |
+| Timber production in Slovak mountain   forests                                                                                                      | Slovakia       |
+| Milk production with label 'mountain   milk' according to EU regulations                                                                            | Slovakia       |
+| Family farms with both production and   recreational possibilities for visitors                                                                     | Slovakia       |
+| Horse breeding in mountain areas                                                                                                                    | Slovakia       |
+| Organic farming and wine production in   Vadna                                                                                                      | Hungary        |
+| Spring and mineral waters from mountains   - sold as natural or flavored with local wild herbs                                                      | Slovakia       |
+| Ecological garden in PallagvÃ¶lgy - a   joint enterprise                                                                                            | Hungary        |
+| HOREZU' CERAMICS                                                                                                                                    | Romania        |
+| THERAPEUTIC BEE PRODUCTS (PROPOLIS and   POLLEN)                                                                                                    | Romania        |
+| 'MOZZARELLA'                                                                                                                                        | Romania        |
+| E-commerce and governement incentives to   support domestic game meat consumption                                                                   | Slovakia       |
+| 'TELEMEA'                                                                                                                                           | Romania        |
+| Pumpkin seed products in Boldva                                                                                                                     | Hungary        |
+| The labelled traditional cheese products   from sheep or from a mixture of sheep and cow milk                                                       | Slovakia       |
+| ValaÅ¡skÃ½ frgÃ¡l                                                                                                                                   | Czech Republic |
+| A strong alcoholic beverages from juniper   berries growing in Slovak mountains protected by PGI                                                    | Slovakia       |
+| Beef cattle breeding in mountains                                                                                                                   | Slovakia       |
+| Winter ski recreation in Slovak mountains                                                                                                           | Slovakia       |
+| Living Countryhouse - farm museum                                                                                                                   | Hungary        |
+| Beekeeping in mountain areas for   different bee products and polination                                                                            | Slovakia       |
+| Collection of forest mushrooms for own   consumption                                                                                                | Slovakia       |
+| Wood from Slovak forests used for   building houses, cottages, restaurants and guesthouses                                                          | Slovakia       |
+| 'SALAM MONTAN ANGUS'                                                                                                                                | Romania        |
+| FARMED and PROCESSED MOUNTAIN TROUT                                                                                                                 | Romania        |
+| 'BRÄ‚NZÄ‚ HOREZU'                                                                                                                                   | Romania        |
+| VIDRA LAKE and LOTRU-CIUNGET   HYDROELECTRIC POWER STATION                                                                                          | Romania        |
+| Use of good quality air for healing   purposes through recreational stays in high mountains                                                         | Slovakia       |
+| ALL SEASON MOUNTAIN TOURISM                                                                                                                         | Romania        |
+| The tastes of Monostor                                                                                                                              | Hungary        |
+| Small scale production of high quality   oils for eating and cosmetic purposes                                                                      | Slovakia       |
+| Sheep's wool processing helps maintain   traditional sheep farming in Slovakia; the sheep wool products include home   textile products and clothes | Slovakia       |
+| Organic production and packaging of   medicinal herbs in mountains                                                                                  | Slovakia       |
+| 'PASTRAMA DE OAIE'                                                                                                                                  | Romania        |
+| Processed timber (saw mils and wood   products) from domestic production                                                                            | Slovakia       |
+| HIGH NATURE VALUE (HNV) GRASSLANDS                                                                                                                  | Romania        |
+| Cow - dairy products                                                                                                                                | Czech Republic |
+| MOUNTAIN HONEY                                                                                                                                      | Romania        |
+| Lamb meat production - focusing on local   consumers instead of export                                                                              | Slovakia       |
+| LIVE SHEEP and LAMBS FOR SLAUGHTER                                                                                                                  | Romania        |
+| Sustainable local food system project -   KÃ³spallag                                                                                                | Hungary        |
+| Pasta from MÃºcsony - a social economy   project                                                                                                    | Hungary        |
+| CERTIFIED ECOTOURISM                                                                                                                                | Romania        |
+| A combination of beekeeping and   agrotourism                                                                                                       | Slovakia       |
+| FIREWOOD FOR HEATING and COOKING                                                                                                                    | Romania        |
+| 'GASTRO LOCAL'                                                                                                                                      | Romania        |
+| Trizs, the fruitful village                                                                                                                         | Hungary        |
 
 
 ## Structure of the application
